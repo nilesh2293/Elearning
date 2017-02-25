@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\it_support;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -36,4 +37,21 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+    /**
+    *Create a new IT Support Creadentials
+    *
+    * @return void
+    */
+    public function insert()
+    {
+        $username='itsupport@gmail.com';
+        $password=bcrypt('itsuppoert123');
+        $it_support=new it_support;
+        $it_support->username=$username;
+        $it_support->password=$password;
+        $it_support->save();
+
+    }
+
 }

@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
+
+
+Route::get('/register_user','Auth\LoginController@insert');
+
+Auth::routes();
+
+/**********Home page routes**************/
+Route::get('/home', 'HomeController@index');
+Route::POST('/upload_video','VideoController@uploadVideo');
+
