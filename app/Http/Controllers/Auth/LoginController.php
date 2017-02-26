@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\it_support;
+use App\It_support;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -46,9 +46,9 @@ class LoginController extends Controller
     public function insert()
     {
         $username='itsupport@gmail.com';
-        $password=bcrypt('itsuppoert123');
-        $it_support=new it_support;
-        $it_support->username=$username;
+        $password=bcrypt('itsupport123');
+        $it_support=new It_support;
+        $it_support->email=$username;
         $it_support->password=$password;
         $it_support->save();
 

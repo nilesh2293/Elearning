@@ -10,6 +10,23 @@
                 <div class="panel-body">
                     {!! Form::open(array('url' => 'upload_video','files'=>true)) !!}
                       {{ csrf_field() }}
+                      @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <?php
+            $errormsg='The video may not be greater than 25600 kilobytes.';
+            if($error==$errormsg)
+                echo "<li>The video may not be greater than 25 MB.</li>";
+            else
+                echo " <li> $error </li>";
+                ?>
+               
+            @endforeach
+        </ul>
+    </div>
+@endif
+
                         <div class="form-group">
                             <input type="file" name="video" class="form-control" required>
                         </div>
