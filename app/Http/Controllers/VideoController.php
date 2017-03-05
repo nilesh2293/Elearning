@@ -11,6 +11,33 @@ use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
+
+/**
+ *
+ * Show All Videos
+ *Also include filter
+ *
+ *  returns all url of video includeing class info
+ */
+public function index($class_id='')
+{
+	$success=0;
+	$video=new Video;
+	if($class_id='')
+		$get_all_video=$video->where('status','1')->get();
+	else
+		$get_all_video=$video->where('class_id',$class_id)->where('status','1')->get();
+
+if(count($get_all_video)>0)
+	$success=1;
+
+	return response()->json([
+		'video_url'=>$get_all_video,
+		'success'=>$success
+		]);
+
+}
+
  	/**
      * Validate and upload a video 
      * 
