@@ -22,5 +22,9 @@ Auth::routes();
 
 /**********Home page routes**************/
 Route::get('/home', 'HomeController@index');
-Route::POST('/upload_video','VideoController@uploadVideo');
+
+
+/*Show all videos**/
+
+Route::get('/video','VideoController@index');
 
