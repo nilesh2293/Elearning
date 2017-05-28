@@ -35,11 +35,7 @@ public function index($class_id=null)
 	if(count($get_all_video)>0)
 		$success=1;
 
-	return response()->json([
-		'video_url'=>$get_all_video,
-		'success'=>$success
-		]);
-
+	return view('video/showVideo',compact('get_all_video'));
 }
 
  	/**
