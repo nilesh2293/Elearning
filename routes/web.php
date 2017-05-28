@@ -26,5 +26,5 @@ Route::get('/home', 'HomeController@index');
 
 /*Show all videos**/
 
-Route::get('/video','VideoController@index');
+Route::get('/video1','VideoController@index');
 

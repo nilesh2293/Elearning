@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+/*Show all videos**/
+
+Route::get('/video','VideoController@index');
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');

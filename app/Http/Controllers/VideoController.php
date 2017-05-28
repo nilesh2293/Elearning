@@ -8,6 +8,8 @@ use Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
+use App\Videoview;
+
 
 class VideoController extends Controller
 {
@@ -19,14 +21,16 @@ class VideoController extends Controller
  *
  *  returns all url of video includeing class info
  */
-public function index($class_id='')
+public function index($class_id=null)
 {
 	$success=0;
 	$video=new Video;
-	if($class_id='')
-		$get_all_video=$video->where('status','1')->get();
+	if(!$class_id)
+		$get_all_video=$video->where('is_deleted','0')->get();
 	else
-		$get_all_video=$video->where('class_id',$class_id)->where('status','1')->get();
+	{
+		$get_all_video=$video->where('class_id',$class_id)->where('is_deleted','0')->get();
+	}
 
 	if(count($get_all_video)>0)
 		$success=1;
@@ -76,7 +80,35 @@ public function index($class_id='')
  		}
 
 
- 		
+
  	}
- 	
+
+
+ 	/**
+ 	 * 
+ 	 * add video view count
+ 	 * @param $user_id,$video_id
+ 	 */
+ 	public function setView(Request $request)
+ 	{
+ 		$video_id=$request->video_id;
+ 		$user_id=$request->user_id;
+
+ 		//create model object
+ 		$videoView=new Videoview;
+ 		$videoView->user_id=$user_id;
+ 		$videoView->video_id=$video_id;
+ 		$videoView->save();
+ 		if($videoView)
+ 			return response()->json([
+ 				"success"=>1
+ 			]);
+ 		else
+ 			return response()->json([
+ 				"success"=>1
+ 			]);
+ 	}
+
+
+
  }
