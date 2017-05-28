@@ -1,165 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Video</title>
-	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-	
-	<!-- Style Sheets -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<!-- Font Icons -->
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
-	<link rel="stylesheet" type="text/css" href="css/socicon-styles.css">	
-	<!-- Font Icons -->
-	<link rel="stylesheet" href="css/hover-min.css" />
-	<link rel="stylesheet" href="css/animate.css" />
-	<link rel="stylesheet" href="css/css-menu.css" />
-	<link rel="stylesheet" href="css/owl.carousel.css" />
-	<link rel="stylesheet" href="css/loader.css" />
-	<link rel="stylesheet" href="css/custom.css" />
-	
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+@extends('template.master')
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-
-<!-- Loader -->
-<!-- <div id="loader-container">
-	<div id="loader">
-	  <ul>
-	    <li></li>
-	    <li></li>
-	    <li></li>
-	    <li></li>
-	    <li></li>
-	    <li></li>
-	  </ul>
-	</div>
-</div> -->
-<!-- Loader -->
-
-<div id="wrapper">
-	<div id="main-content">
-	<!-- Main Bar-->
-	<div id="main-bar">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2 col-sm-5 col-xs-6 border-right">
-					<div class="logo">
-						<a href="index.html">
-							<img class="img-responsive" src="images/logo.png" alt="Logo">	
-						</a>
-					</div>					
-				</div>
-				<div class="col-sm-7 col-xs-6 hidden-md hidden-lg text-right">
-					<button type="button" class="btn btn-default btn-create-album">
-						Create Album
-					</button>
-				</div>
-				<!-- <div class="clearfix visible-sm"></div>
-				<div class="clearfix visible-xs"></div>
-				<div class="col-md-6 col-sm-4 border-right sm-border-top">
-					<div class="search-box">
-						<form method="post">
-							<input type="text" name="search" id="search" class="form-control" placeholder="Search Albums" required>
-							<button type="submit" class="search-icon">
-								<i class="fa fa-search"></i>
-							</button>
-						</form>						
-					</div>
-				</div> -->
-<!-- 				<div class="col-md-2 col-sm-4 sm-border-top">
-					<div class="social-icon">
-						<ul class="list-inline list-unstyled">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-							<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-						</ul>
-					</div>
-				</div> -->
-				<div class="col-md-2 col-sm-4 border-left sm-border-top right-float">
-					<div class="login">
-						<div class="media">
-							<div class="media-left">
-								<img class="img-responsive play-svg svg" src="images/user.svg" alt="play" onerror="this.src='images/user.png'">
-							</div>
-							<div class="media-body">
-								<p>
-									Welcome Guest <a class="login-toggle" href="#">Login</a>
-								</p>
-							</div>
-						</div>									
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Main Bar -->
-	<!-- Main Navigation -->
-		<div id="main-navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-sm-12">
-					<div id='cssmenu'>
-						<ul>
-						  <li><a href="#"><i class="fi ion-ios-home"></i>Home</a>
-							  <ul>
-							  	<li><a href="index.html">Home V1</a>
-									<ul>
-										<li><a href="index.html">Home V1</a></li>
-										<li><a href="index-left-sidebar.html">With Left Sidebar</a></li>
-										<li><a href="index-without-sidebar.html">Without Sidebar</a></li>
-									</ul>
-							  	</li>
-							  	<li><a href="../video-v2/index-v2.html">Home V2</a>
-                                <ul>
-											<li><a href="../video-v2/index-v2.html">Home V2</a></li>
-											<li><a href="../video-v2/index-left-sidebar.html">With Left Sidebar</a></li>
-											<li><a href="../video-v2/index-without-sidebar.html">Without Sidebar</a></li>
-										</ul>
-                                </li>
-							  </ul>
-						   </li>
-						   <li class="active"><a href='#'><i class="fi ion-ios-film-outline"></i>Video Styles</a>
-						   	  <ul>
-							  	<li><a href="video-2-column.html">Video 2 Column</a></li>
-							  	<li><a href="video-3-column.html">Video 3 Column</a></li>
-							  	<li><a href="video-4-column.html">Video 4 Column</a></li>
-							  </ul>						      
-						   </li>
-						   <li><a href="#"><i class="fi ion-android-apps"></i>Category</a>
-								<ul>
-									<li><a href="categories.html">Categories</a></li>
-									<li><a href="category-listing.html">Category Listing</a></li>
-								</ul>
-						   </li>
-						   <li><a href="#"><i class="fi ion-compose"></i>Blog</a>
-								<ul>
-									<li><a href="blog-grid.html">Blog Grid Style</a></li>
-									<li><a href="blog-listing.html">Blog Listing Style</a></li>
-									<li><a href="blog-detail.html">Blog Detail</a></li>
-								</ul>
-						   </li>
-						   <li><a href="tv.html"><i class="fi ion-android-desktop"></i>Tv</a></li>
-						   <li><a href="about.html"><i class="fi ion-person"></i>About</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Main Navigation -->
-
+@section('content')
 	<!-- Inner page Bar -->
 	<div id="page-bar">
 		<div class="container">
@@ -360,7 +201,7 @@
 									<img src="images/most-liked-img-s1.jpg" alt="video">
 								</div>
 								<div class="media-body">
-									<h1><a href="{{$value->video_url}}">{{$value->video_title}}</a></h1>
+									<h1><a href="<?php echo public_path('video');?>/{{$value->video_url}}">{{$value->video_title}}</a></h1>
 									<p>
 										<span><i class="fa fa-comment"></i> 10</span>
 										<span><i class="fa fa-eye"></i> 534</span>
@@ -417,7 +258,4 @@
 		</div>
 	</div>
 
-	<!-- Secondary Section -->
-	<?php //include ("include/footer.php"); ?>	
-</body>
-</html>
+@endsection
